@@ -3,10 +3,28 @@ import { Link } from 'react-router-dom'
 import LogoTitle from '../../assets/images/logo-s.png'
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
+import Logo from './Logo'
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
-  const nameArray = ['f', 'o', 'p', 'a', '', 'k', 'u', 'e', 't', 'e']
+  const nameArray = [
+    ' ',
+    'F',
+    'o',
+    'p',
+    'a',
+    ' ',
+    'K',
+    '.',
+    ' ',
+    'D',
+    'u',
+    'c',
+    'l',
+    'a',
+    'i',
+    'r',
+  ]
   const jobArray = [
     'w',
     'e',
@@ -39,7 +57,7 @@ const Home = () => {
           <br />
           <span className={`${letterClass} _13`}>I</span>
           <span className={`${letterClass} _14`}>'m</span>
-          <img src={LogoTitle} alt='developer' />
+          {/* <img src={LogoTitle} alt='developer' /> */}
           <AnimatedLetters
             letterClass={letterClass}
             strArray={nameArray}
@@ -52,11 +70,12 @@ const Home = () => {
             idx={22}
           />
         </h1>
-        <h2>FullStack Developer / JavaScript Expert / Instructor</h2>
+        <h2>FullStack Developer / Instructor</h2>
         <Link to='/contact' className='flat-button'>
           CONTACT ME
         </Link>
       </div>
+      <Logo />
     </div>
   )
 }
