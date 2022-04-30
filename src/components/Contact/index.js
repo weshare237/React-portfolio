@@ -3,13 +3,10 @@ import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 import emailjs from '@emailjs/browser'
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
-  // const [email, setEmail] = useState('')
-  // const [subject, setSubject] = useState('')
-  // const [message, setMessage] = useState('')
-  // const [name, setName] = useState('')
   const refForm = useRef()
 
   useEffect(() => {
@@ -37,6 +34,8 @@ const Contact = () => {
         }
       )
   }
+
+  const position = [44.96366, 19.61045]
 
   return (
     <>
@@ -96,6 +95,26 @@ const Contact = () => {
               </ul>
             </form>
           </div>
+        </div>
+        <div className='info-map'>
+          Fopa Kuete Duclair,
+          <br />
+          Cameroon,
+          <br />
+          Dschang, Foto <br />
+          University of Dschang <br />
+          <span>fopaduclair2000@gmail.com</span>
+        </div>
+        <div className='map-wrap'>
+          <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+            />
+            <Marker position={position}>
+              <Popup>Fopa lives here, come over for a cup of coffee :)</Popup>
+            </Marker>
+          </MapContainer>
         </div>
       </div>
       <Loader type='pacman' />

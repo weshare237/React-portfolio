@@ -77,8 +77,7 @@
   background: rgba(8, 253, 216, 0.1);
   float: right;
   width: 53%;
-  height: 115%;
-  margin-top: -3%;
+  height: 100%;
 }
 
 .leaflet-container {
@@ -108,9 +107,8 @@
 
   span {
     font-size: 16px;
-
-    span {
-      color: #ffd700;
-    }
+    display: block;
+    padding-top: 20px;
+    color: #ffd700;
   }
 }
